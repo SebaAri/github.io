@@ -95,8 +95,7 @@ body {
     text-align: center;
     font-size: 2rem;
     font-family: 'Righteous', cursive;
-    position: sticky;
-    top: 100px;
+    margin-bottom: 4px;
    
 }
 
@@ -199,8 +198,6 @@ body {
 .grid-projects {
     width: 70%;
     margin: 0 auto;
-    border: 1px solid white;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -213,11 +210,10 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    .grid-projects .g-items {
     position: relative;
     overflow: hidden;
 }
-}
+
 .grid-projects .g-items:first-of-type {
     background-image: url("assets/google.png");
 }
@@ -228,7 +224,18 @@ body {
     background-image: url("assets/spotify.png");
 }
 
-
+.grid-projects .g-items .overlay {
+    position: absolute;
+    bottom:0;
+    background-color: rgba(0,63,71,0.95);
+    width: 100%;
+    height: 50%;
+    color: white;
+    font-size: 2em;
+    display:grid;
+    place-items: center;
+    border-radius: 30px 30px 0 0;
+}
 
 @media (width <= 1344px){
 .header .header_description {
@@ -244,7 +251,15 @@ body {
       .header .header_name h4 {
    font-size: 3.5vw;
     }
- 
+    .grid-projects {
+        min-height: 80%;
+        align-items: start;
+        margin-bottom: 70px;
+
+    }
+    .grid-projects .g-items {
+        min-height: 80%;
+    }
 }
 @media screen and (width <= 480px) {
     .header .nav {
