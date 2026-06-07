@@ -7,27 +7,29 @@ html {
     font-size: 16px;
 }
 .header .header-title {
-    top: 50px;
     color: white;
-    left: 80px;
     font-family: 'Righteous', cursive;
     font-size: 2em;
-    position: fixed;
-    right: 0;
-    top: 50px;
+   
 }
 .header .nav {
-   margin: 0 auto;
    width: 60%;
    padding: 30px;
-   position: fixed;
-   right: 0;
-   top: 30px;
-   border-bottom-left-radius: 30px;
+   margin: 0 auto;
+ 
+   
+
 }
 .header .nav ul {
     list-style: none;
-    
+    border: 1px solid white;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    height: 80%;
+    align-items: end;
+     padding: 20px;
+     
 }
 .header .nav ul li {
     display: inline-block;
@@ -59,6 +61,14 @@ html {
     background-blend-mode: multiply;
     background-size: cover;
 
+
+}
+.header .container_nav {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
 }
 @media (max-width: 768px){
