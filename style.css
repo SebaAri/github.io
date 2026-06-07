@@ -10,25 +10,21 @@ html {
     color: white;
     font-family: 'Righteous';
     font-size: 2em;
-    /*padding: 60px;*/
+
    
 }
 .header .nav  {
    width: 60%;
    padding: 30px;
-   
- 
-   
-
 }
 .header .nav ul {
     list-style: none;
     display: flex;
-   /* justify-content: space-evenly;*/
+    justify-content: space-evenly;
     align-items: end;
     padding: 20px;
     width: 80%;
-    justify-content: center;
+    
     
 
 }
@@ -72,6 +68,22 @@ html {
     align-items: center;
 
 }
+.container_nav {
+   flex-direction: column;
+   background-color: rgba(0,63,71,0.8);
+   backdrop-filter: blur(10px);
+   position:fixed;
+   z-index: 2000;
+    
+}
+.container_nav .nav ul{
+    flex-wrap: wrap;
+    align-items: start;
+    width: 100%;
+    font-size: 2.5em;
+    
+}
+
 @media (max-width: 768px){
 
     .header{
@@ -126,7 +138,7 @@ body {
 
 .header .header_description {
     position: relative;
-    top: 40px;
+    top: 240px;
     background-color: rgba(0,63,71,0.8);   
     width: 25%;
     height: 350px;
@@ -145,9 +157,8 @@ body {
     clip-path: circle(39.0% at 50% 50%);
     float: left;
     shape-outside: circle(39.0% at 50% 50%);
-    margin-right: 50px;
-    margin-left: -7px;
     margin-top: 40px;
+    align-self: center;
 }
 
 .header .header_description span {
@@ -161,7 +172,7 @@ body {
 
 .header_name {
     position: relative;
-    top: 100px;
+    top: 360px;
     width: auto;
     float: left;
     height: auto;
@@ -185,24 +196,15 @@ body {
     padding: 0 5px;
     border-radius: 10px;
 }
-/*.header .headers_networks {
-    position: fixed;
-    top: 130px;
-    right: 0;
-    width: 60px;
-    height: auto;
-    border: 1px solid white;
-    padding: 10px;
-    border-radius: 8px 0 0 8px;
-    background-color: rgba(0,63,71,0.8);
-    backdrop-filter: blur(6px);
-    box-shadow: 3px 5px 10px #ccc;
-    z-index: 1000;
-}*/
+
 .header_name .headers_networks{
     width: auto;
     height: auto;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+
 }
 .header .headers_networks a i {
     margin-right: 20px;
@@ -249,6 +251,20 @@ body {
     display:grid;
     place-items: center;
     border-radius: 30px 30px 0 0;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 @media (width <= 1344px){
