@@ -16,22 +16,28 @@ html {
 .header .nav  {
    width: 60%;
    padding: 30px;
+   
+   
 }
 .header .nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+   /* justify-content: space-evenly;*/
     align-items: end;
     padding: 20px;
     width: 80%;
-    
-    
+
+
+    justify-content: center;
+ 
+    gap: 20px;
 
 }
 .header .nav ul li {
     display: inline-block;
     margin-right: 11%;
     white-space: nowrap;
+    
 }
 
 .nav ul li a{
@@ -59,7 +65,9 @@ html {
     background-size: cover;
 
 
+
 }
+
 .header .container_nav {
     width: 100%;
     height: auto;
@@ -67,21 +75,23 @@ html {
     justify-content: space-around;
     align-items: center;
 
+
 }
 .container_nav {
-   flex-direction: column;
+   flex-direction: row;
    background-color: rgba(0,63,71,0.8);
    backdrop-filter: blur(10px);
    position:fixed;
    z-index: 2000;
-    
+
+     
 }
+
 .container_nav .nav ul{
     flex-wrap: nowrap;
     align-items: start;
     width: 100%;
     font-size: 2.5em;
-    
 }
 
 @media (max-width: 768px){
@@ -232,12 +242,15 @@ body {
 
 .grid-projects .g-items:first-of-type {
     background-image: url("assets/google.png");
+    
 }
 .grid-projects .g-items:nth-child(2) {
     background-image: url("assets/Logo.png");
+    
 }
 .grid-projects .g-items:last-of-type {
     background-image: url("assets/spotify.png");
+    
 }
 
 .grid-projects .g-items .overlay {
@@ -252,7 +265,34 @@ body {
     place-items: center;
     border-radius: 30px 30px 0 0;
 }
+.information   {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   /* padding-top: 50px;*/
+   
 
+}
+.information .information_image {
+    width: 50%;
+    border-radius: 15px;
+}
+.information .information_image img {
+     width: 100%;
+     max-width: 100%;
+     height: auto;
+     object-fit: cover;
+     border-radius: inherit;
+}
+.information p {
+    color: white;
+    width: 30%;
+    font-size: 2vw;
+
+    
+}
 ul {
     display: flex;
     justify-content: center;
@@ -262,8 +302,9 @@ ul {
 
 @media (max-width: 768px) {
     ul {
-        flex-direction: column;
+       flex-direction: row;
         align-items: center;
+    
     }
 }
 
@@ -301,10 +342,25 @@ ul {
     .header .nav {
        width: 100%;
        margin-top: 20px;
+    
 }
 .header .nav ul li {
     font-size: 1.5em;
+
+}
+.information {
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
     
+}
+.information .information_image {
+    width: 80%;
+    
+}
+.information p{
+    font-size: 3.8vw;
+    width: 90%;
 }
 }
 
