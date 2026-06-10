@@ -8,13 +8,18 @@
 
 html {
     scroll-behavior: smooth;
+    box-sizing: border-box;
     font-family: sans-serif, Arial, Helvetica;
     font-size: 16px;
+    scroll-padding-top: 60px;
 }
 
 body {
     width: 100%;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0
+   /* background-color: #f4f4f4;*/
+    background-color: rgb(0, 25, 28);
 }
 
 /* --- NAVEGACIÓN --- */
@@ -64,16 +69,19 @@ body {
 /* ---  / HEADER --- */
 .header { 
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-color: rgba(0, 63, 71, 0.95);
     background-image: url("assets/Fondo.png");
     background-position: center;
     background-blend-mode: multiply;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 80px; 
+    /*padding-top: 80px; */
+    position: relative;
+    box-sizing: border-box;
 }
 
 .header-hero-container {
