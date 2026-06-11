@@ -18,19 +18,21 @@ body {
     background-color: #f4f4f4; 
 } 
 
-/* --- NAVEGACIÓN --- */ 
+/* --- NAVEGACIÓN (ALINEADA CON EL CONTENIDO) --- */ 
 .container_nav { 
-    width: 100%; 
+    width: 85%; /* Mismo ancho que el contenedor de la foto y texto */ 
+    max-width: 1200px; /* Mismo tope de ancho */ 
+    margin: 0 auto; /* Lo centra en la pantalla */ 
     display: flex; 
-    justify-content: space-around; 
+    justify-content: space-between; /* Envía ARIEL a la izquierda y el menú a la derecha */ 
     align-items: center; 
     background-color: transparent;  
     backdrop-filter: none; 
     position: fixed; 
     top: 0; 
-    left: 0; 
+    left: 7.5%; /* Lo centra respecto al 85% del ancho de la pantalla */ 
     z-index: 2000; 
-    padding: 25px 20px; 
+    padding: 25px 0; /* Limpiamos paddings laterales para que pegue perfecto en los bordes */ 
 } 
 
 .header .header-title { 
@@ -82,7 +84,7 @@ body {
     padding-top: 80px;  
 } 
 
-/* CAJA MÁGICA: Nombre a la izquierda, tarjeta a la derecha */ 
+/* CAJA PRINCIPAL: Nombre a la izquierda, tarjeta a la derecha */ 
 .header-hero-container { 
     width: 85%; 
     max-width: 1200px; 
@@ -131,7 +133,7 @@ body {
     transform: scale(1.2); 
 } 
 
-/* TARJETA FLOTANTE DE LA DERECHA (Con fondo semitransparente, blur y sombra) */ 
+/* TARJETA FLOTANTE DE LA DERECHA */ 
 .header .header_description { 
     background-color: rgba(0, 63, 71, 0.8);    
     width: 320px; 
@@ -265,16 +267,42 @@ body {
     background-color: rgba(0, 63, 71, 0.85); 
 } 
 
+/* --- BOTÓN IR ARRIBA ORIGINAL RECONSTRUIDO --- */ 
+.link_up { 
+    width: 45px; 
+    height: 45px; 
+    background-color: rgba(0, 63, 71, 0.8);  
+    color: white; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    font-size: 1.5em; 
+    display: grid; 
+    place-items: center; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    z-index: 1000; 
+    transition: background-color 0.3s;
+} 
+
+.link_up:hover {
+    background-color: rgba(0, 63, 71, 1);
+}
+
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */ 
 
 /* 1. ADAPTACIÓN PARA PANTALLAS PEQUEÑAS DE PC / TABLETS */ 
 @media screen and (max-width: 1344px) { 
+    .container_nav {
+        width: 90%;
+        left: 5%;
+    }
     .header-hero-container { 
         width: 90%; 
         gap: 30px; 
     } 
     .header_name h1 { 
-        font-size: 3rem; /* Achica un poco el texto para que no colisione */ 
+        font-size: 3rem; 
     } 
 } 
 
@@ -285,7 +313,12 @@ body {
         padding-top: 160px; 
         padding-bottom: 60px; 
     } 
-    /* El nombre y la tarjeta se apilan verticalmente de forma prolija */ 
+    .container_nav {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        padding: 25px 20px;
+    }
     .header-hero-container { 
         flex-direction: column !important; 
         text-align: center; 
@@ -309,6 +342,8 @@ body {
 /* 2. ADAPTACIÓN EXCLUSIVA PARA CELULARES */ 
 @media screen and (max-width: 768px) { 
     .container_nav { 
+        position: fixed;
+        left: 0;
         height: auto !important;  
         flex-direction: column !important;  
         padding: 15px 20px !important;  
