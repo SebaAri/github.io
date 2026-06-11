@@ -133,20 +133,25 @@ body {
     transform: scale(1.2); 
 } 
 
+/* TARJETA FLOTANTE DE LA DERECHA */ 
 .header .header_description { 
     background-color: rgba(0, 63, 71, 0.8);   
     width: 320px; 
     padding: 30px; 
     border-radius: 10px; 
     backdrop-filter: blur(6px); 
+    
+    /* Forzamos el orden vertical estricto */
     display: flex; 
     flex-direction: column; 
-    align-items: center; /* Alinea la foto y el texto al centro de la tarjeta */
-    text-align: center;  /* Asegura la alineación del texto */
-    gap: 15px;           /* Reduce un poco el espacio entre la foto y el texto */
+    align-items: center;    /* Centra la foto y el texto horizontalmente */
+    justify-content: center;
+    text-align: center;     /* Alinea las líneas de texto al centro */
+    gap: 20px; 
+    
     box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
     flex-shrink: 0; 
-} 
+}
  
 
 .header .header_description img { 
@@ -157,12 +162,12 @@ body {
 } 
 
 .header .header_description span { 
-    color: #ffffff;         /* Blanco puro */
-    font-size: 1.2rem;      /* Un poco más grande para que destaque */
-    font-weight: 500;       /* Peso medio para que se note el rol */
-    margin-top: 10px;       /* Margen superior para separarlo sutilmente de la foto */
-    display: block;         /* Fuerza a que se comporte como bloque debajo de la imagen */
-    width: 100%;
+    color: #ffffff !important;   /* Forzamos el blanco puro */
+    font-size: 1.1rem; 
+    text-align: center; 
+    display: block;              /* Lo convertimos en bloque para que ocupe su propio renglón */
+    width: 100%;                 /* Ocupa el ancho disponible dentro de la tarjeta */
+    word-wrap: break-word;       /* Si el texto es largo, salta de línea automáticamente */
 }
 
 /* --- CONTENIDO PRINCIPAL --- */ 
