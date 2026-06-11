@@ -136,12 +136,16 @@ body {
 
 /* TARJETA FLOTANTE DE LA DERECHA */ 
 .header .header_description {
+    background-color: rgba(0, 63, 71, 0.8);
     width: 320px;
+    padding: 30px;
+    border-radius: 10px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-right: 20px;
+    gap: 15px;
 }
 
 .header .header_description img {
@@ -150,10 +154,8 @@ body {
 }
 
 .header .header_description span {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
+    color: white;
+    font-size: 1.1rem;
 }
 
 /* --- CONTENIDO PRINCIPAL --- */ 
