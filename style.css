@@ -1,238 +1,244 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
-    font-family: sans-serif, Arial, Helvetica;
-    font-size: 16px;
-    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */
+    scroll-behavior: smooth;
+    font-family: sans-serif, Arial, Helvetica;
+    font-size: 16px;
+    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */
 }
 
 body {
-    width: 100%;
-    background-color: #f4f4f4;
+    width: 100%;
+    background-color: #f4f4f4;
 }
 
 /* --- NAVEGACIÓN --- */
 .container_nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgba(0, 63, 71, 0.9);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2000;
-    padding: 20px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 63, 71, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 20px 20px;
 }
 
 .header .header-title {
-    color: white;
-    font-family: 'Righteous', sans-serif;
-    font-size: 2rem;
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    font-size: 2rem;
 }
 
 .header .nav {
-    width: auto;
+    width: 60%;
+    top: 20px;
+    padding: 30px;
 }
 
 .header .nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
-
+.nav ul li {
+    display: inline-block;
+    margin-right: 11%;
+}
 .nav ul li a {
-    text-decoration: none;
-    color: rgb(184, 184, 184);
-    font-size: 1rem;
-    transition: color 0.3s, font-weight 0.3s;
+    text-decoration: none;
+    color: rgb(184, 184, 184);
+    font-size: 1rem;
+    transition: color 0.3s, font-weight 0.3s;
 }
 
 .nav ul li a:hover {
-    color: white;
-    font-weight: 700;
+    color: white;
+    font-weight: 700;
 }
 
 /* --- HERO / HEADER --- */
 .header { 
-    width: 100%;
-    height: 100vh; /* Se mantiene en formato hoja completa */
-    background-color: rgba(0, 63, 71, 0.95);
-    background-image: url("assets/Fondo.png");
-    background-position: center;
-    background-blend-mode: multiply;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 80px; 
+    width: 100%;
+    height: 100vh; /* Se mantiene en formato hoja completa */
+    background-color: rgba(0, 63, 71, 0.95);
+    background-image: url("assets/Fondo.png");
+    background-position: center;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; 
 }
 
 /* CAJA MÁGICA: Nombre a la izquierda, foto al lado a la derecha */
 .header-hero-container {
-    width: 85%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: row; /* Fuerza la alineación horizontal */
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
+    width: 85%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row; /* Fuerza la alineación horizontal */
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
 }
 
 .header_name {
-    color: white;
-    width: 60%; /* Toma espacio preferencial para el texto largo */
+    color: white;
+    width: 60%; /* Toma espacio preferencial para el texto largo */
 }
 
 .header_name h4 {
-    color: rgb(224, 224, 224);
-    font-size: 2.5rem;
-    font-weight: 100;
+    color: rgb(224, 224, 224);
+    font-size: 2.5rem;
+    font-weight: 100;
 }
 
 .header_name h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .header_name h1::first-letter {
-    background-color: rgba(0, 63, 71, 0.8);
-    padding: 0 10px;
-    border-radius: 10px;
+    background-color: rgba(0, 63, 71, 0.8);
+    padding: 0 10px;
+    border-radius: 10px;
 }
 
 .headers_networks {
-    display: flex;
-    gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .headers_networks a i {
-    color: white;
-    font-size: 2rem;
-    transition: transform 0.3s;
+    color: white;
+    font-size: 2rem;
+    transition: transform 0.3s;
 }
 
 .headers_networks a i:hover {
-    transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .header .header_description {
-    background-color: rgba(0, 63, 71, 0.8);   
-    width: 320px;
-    padding: 30px;
-    border-radius: 10px;
-    backdrop-filter: blur(6px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    flex-shrink: 0; /* Evita que la tarjeta se achique o aplaste */
+    background-color: rgba(0, 63, 71, 0.8);   
+    width: 320px;
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    flex-shrink: 0; /* Evita que la tarjeta se achique o aplaste */
 }
 
 .header .header_description img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .header .header_description span {
-    color: white;
-    font-size: 1.1rem;
-    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
 }
 
 /* --- CONTENIDO PRINCIPAL --- */
 .content-main {
-    width: 100%;
+    width: 100%;
 }
 
 .content-main section {
-    width: 100%;
-    min-height: 100vh;
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .content-main section:nth-child(even) {
-    background-color: rgb(0, 25, 28);
+    background-color: rgb(0, 25, 28);
 }
 
 .content-main section h2 {
-    color: rgb(0, 25, 28);
-    text-align: center;
-    font-size: 2.5rem;
-    font-family: 'Righteous', cursive;
-    margin-bottom: 40px;
+    color: rgb(0, 25, 28);
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Righteous', cursive;
+    margin-bottom: 40px;
+    padding: 0;
 }
 
 .content-main section:nth-child(even) h2 {
-    color: white;
+    color: white;
 }
 
 /* Sobre Mí */
 .information {
-    width: 85%;
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 40px;
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
 }
 
 .information .information_image {
-    width: 45%;
+    width: 45%;
 }
 
 .information .information_image img {
-     width: 100%;
-     height: auto;
-     border-radius: 15px;
+     width: 100%;
+     height: auto;
+     border-radius: 15px;
 }
 
 .information p {
-    color: #333;
-    width: 50%;
-    font-size: 1.2rem;
-    line-height: 1.6;
+    color: #333;
+    width: 50%;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 .content-main section:nth-child(even) .information p {
-    color: white;
+    color: white;
 }
 
 /* Proyectos (Grid) */
 .grid-projects {
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .grid-projects .g-items {
-    height: 350px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
 .grid-projects .g-items:nth-child(1) { background-image: url("assets/google.png"); }
@@ -240,109 +246,111 @@ body {
 .grid-projects .g-items:nth-child(3) { background-image: url("assets/spotify.png"); }
 
 .grid-projects .g-items .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 63, 71, 0.95);
-    width: 100%;
-    height: 40%;
-    color: white;
-    font-size: 1.5rem;
-    display: grid;
-    place-items: center;
-    transition: height 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 63, 71, 0.95);
+    width: 100%;
+    height: 40%;
+    color: white;
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+    transition: height 0.3s ease;
 }
 
 .grid-projects .g-items:hover .overlay {
-    height: 100%;
-    background-color: rgba(0, 63, 71, 0.85);
+    height: 100%;
+    background-color: rgba(0, 63, 71, 0.85);
 }
 
 /* Botón Ir Arriba */
 .link_up {
-    width: 45px;
-    height: 45px;
-    background-color: rgba(0, 63, 71, 0.8); 
-    color: white;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 1.5em;
-    display: grid;
-    place-items: center;
-    text-decoration: none;
-    border-radius: 5px;
-    z-index: 1000;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 63, 71, 0.8); 
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5em;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 1000;
 }
 
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
 
 /* Ajustado para que en laptops se mantengan al lado, y pase a vertical solo en pantallas chicas */
 @media (max-width: 992px) {
-    .header {
-        height: auto !important;
-        min-height: 100vh;
-        padding-top: 160px; /* Colchón de espacio para el menú móvil */
-        padding-bottom: 60px;
-    }
-    .header-hero-container {
-        flex-direction: column !important; /* Pasa a vertical en tablets/móviles */
-        text-align: center;
-        gap: 40px;
-    }
-    .header_name {
-        width: 100%;
-    }
-    .headers_networks {
-        justify-content: center;
-        margin-top: 15px;
-    }
-    .header_name h1 {
-        font-size: 3rem;
-    }
-    .information {
-        flex-direction: column;
-    }
-    .information .information_image, .information p {
-        width: 100%;
-    }
+    .header {
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 160px; /* Colchón de espacio para el menú móvil */
+        padding-bottom: 60px;
+    }
+    .header-hero-container {
+        flex-direction: column !important; /* Pasa a vertical en tablets/móviles */
+        text-align: center;
+        gap: 40px;
+    }
+    .header_name {
+        width: 100%;
+    }
+    .headers_networks {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .header_name h1 {
+        font-size: 3rem;
+    }
+    .information {
+        flex-direction: column;
+    }
+    .information .information_image, .information p {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .container_nav {
-        height: auto !important; 
-        flex-direction: column !important; 
-        padding: 15px 20px !important; 
-        gap: 10px; 
-    }
+    .container_nav {
+        height: auto !important; 
+        flex-direction: column !important; 
+        padding: 15px 20px !important; 
+        gap: 10px; 
+    }
 
-    .header .nav {
-        width: 100% !important;
-        justify-content: center;
-    }
+    .header .nav {
+        width: 100% !important;
+        justify-content: center;
+    }
 
-    .header .nav ul {
-        flex-direction: column !important; 
-        gap: 12px !important; 
-        width: 100% !important;
-        text-align: center; 
-    }
+    .header .nav ul {
+        flex-direction: column !important; 
+        gap: 12px !important; 
+        width: 100% !important;
+        text-align: center; 
+    }
 
-    .header .nav ul li {
-        margin: 0 !important;
-        width: 100%;
-    }
+    .header .nav ul li {
+        margin: 0 !important;
+        width: 100%;
+    }
 
-    .nav ul li a {
-        font-size: 1.1rem !important;
-        display: block;
-        padding: 5px 0; 
-    }
+    .nav ul li a {
+        font-size: 1.1rem !important;
+        display: block;
+        padding: 5px 0; 
+    }
 }
 
 /* Preferencias del Sistema */
 @media (prefers-color-scheme: dark) {
-    body { background-color: rgb(0, 25, 28); }
-    .content-main section h2 { color: white; }
-    .information p { color: white; }
+    body { background-color: rgb(0, 25, 28); }
+    .content-main section h2 { color: white; }
+    .information p { color: white; }
 }
+
+quiero sacarle el background de arriba, luego separar mas las palabras de arriba: inicio, sobre mi.... y 
