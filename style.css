@@ -330,3 +330,48 @@ body {
     .content-main section h2 { color: white; }
     .information p { color: white; }
 }
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    
+
+    .profile-frame {
+    
+        width: 100% !important;
+        max-width: 320px; 
+        height: auto !important; 
+        margin: 20px auto !important; 
+
+    
+        border: none !important; 
+        border-radius: 0 !important;
+        box-shadow: none !important; 
+        background-color: transparent !important;
+        
+    
+        overflow: visible !important; 
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    .profile-frame img {
+        position: static !important; 
+        transform: none !important; 
+        
+        
+        border-radius: 10px !important; 
+        
+        
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important; 
+        max-height: 400px; 
+    }
+}
