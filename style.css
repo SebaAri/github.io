@@ -310,6 +310,9 @@ body {
     }
     .header {
         background-image: url("assets/foto(2).png");
+        background-size: cover;       
+        background-position: center; 
+        background-repeat: no-repeat;
     }
 } 
 
