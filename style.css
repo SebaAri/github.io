@@ -50,6 +50,7 @@ body {
     display: flex; 
     gap: 40px; /* Separación de las pestañas del menú */ 
     align-items: center; 
+
 } 
 
 .nav ul li { 
@@ -134,40 +135,25 @@ body {
 } 
 
 /* TARJETA FLOTANTE DE LA DERECHA */ 
-.header .header_description { 
-    background-color: rgba(0, 63, 71, 0.8);   
-    width: 320px; 
-    padding: 30px; 
-    border-radius: 10px; 
-    backdrop-filter: blur(6px); 
-    
-    /* Forzamos el orden vertical estricto */
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;    /* Centra la foto y el texto horizontalmente */
-    justify-content: center;
-    text-align: center;     /* Alinea las líneas de texto al centro */
-    gap: 20px; 
-    
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
-    flex-shrink: 0; 
+.header .header_description {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 20px;
 }
- 
 
-.header .header_description img { 
-    width: 200px; 
-    height: 200px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-} 
+.header .header_description img {
+    display: block;
+    margin: 0 auto;
+}
 
-.header .header_description span { 
-    color: #ffffff !important;   /* Forzamos el blanco puro */
-    font-size: 1.1rem; 
-    text-align: center; 
-    display: block;              /* Lo convertimos en bloque para que ocupe su propio renglón */
-    width: 100%;                 /* Ocupa el ancho disponible dentro de la tarjeta */
-    word-wrap: break-word;       /* Si el texto es largo, salta de línea automáticamente */
+.header .header_description span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 }
 
 /* --- CONTENIDO PRINCIPAL --- */ 
