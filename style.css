@@ -10,7 +10,7 @@ html {
     scroll-behavior: smooth;
     font-family: sans-serif, Arial, Helvetica;
     font-size: 16px;
-    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al h
+    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */
 }
 
 body {
@@ -24,13 +24,13 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: transparent; 
-    backdrop-filter: none; 
+    background-color: rgba(0, 63, 71, 0.9);
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2000;
-    padding: 25px 20px; 
+    padding: 20px 20px;
 }
 
 .header .header-title {
@@ -40,19 +40,14 @@ body {
 }
 
 .header .nav {
-    width: auto; 
+    width: auto;
 }
 
 .header .nav ul {
     list-style: none;
     display: flex;
-    gap: 40px; /* Separación de palabras arriba */
+    gap: 20px;
     align-items: center;
-}
-
-.nav ul li {
-    display: block; 
-    margin: 0; 
 }
 
 .nav ul li a {
@@ -70,7 +65,7 @@ body {
 /* --- HERO / HEADER --- */
 .header { 
     width: 100%;
-    height: 100vh; 
+    height: 100vh; /* Se mantiene en formato hoja completa */
     background-color: rgba(0, 63, 71, 0.95);
     background-image: url("assets/Fondo.png");
     background-position: center;
@@ -82,25 +77,20 @@ body {
     padding-top: 80px; 
 }
 
-/* Contenedor preparado para recibir la foto de fondo cuando achiques la pantalla */
+/* CAJA MÁGICA: Nombre a la izquierda, foto al lado a la derecha */
 .header-hero-container {
     width: 85%;
     max-width: 1200px;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row; /* Fuerza la alineación horizontal */
     justify-content: space-between;
     align-items: center;
     gap: 50px;
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: contain;
-    transition: background 0.3s ease;
 }
 
 .header_name {
     color: white;
-    width: 60%; 
-    transition: width 0.3s ease;
+    width: 60%; /* Toma espacio preferencial para el texto largo */
 }
 
 .header_name h4 {
@@ -136,7 +126,6 @@ body {
     transform: scale(1.2);
 }
 
-/* EL CONTENEDOR DE LA FOTO CHICA (Intacto para pantallas grandes) */
 .header .header_description {
     background-color: rgba(0, 63, 71, 0.8);   
     width: 320px;
@@ -148,7 +137,7 @@ body {
     align-items: center;
     gap: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Evita que la tarjeta se achique o aplaste */
 }
 
 .header .header_description img {
@@ -188,7 +177,6 @@ body {
     font-size: 2.5rem;
     font-family: 'Righteous', cursive;
     margin-bottom: 40px;
-    padding: 0;
 }
 
 .content-main section:nth-child(even) h2 {
@@ -289,40 +277,30 @@ body {
 
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
 
-/* 1. SE ACTIVABA A LOS 1344PX (Y se extiende hacia abajo para cubrir menores de 993px) */
-@media screen and (max-width: 1344px) {
-    .header-hero-container .header_description {
-        display: none !important; /* Desaparece por completo la tarjeta chica */
-    }
-    .header-hero-container {
-        /* Tu foto limpia pasa a ser el fondo del lateral derecho */
-        background-image: url("assets/foto(2).png"); 
-    }
-}
-
-/* 2. RESPONSIVE PARA TABLETS Y PANTAILLAS MEDIANAS (Modificado para mantener la foto de fondo) */
+/* Ajustado para que en laptops se mantengan al lado, y pase a vertical solo en pantallas chicas */
 @media (max-width: 992px) {
     .header {
         height: auto !important;
         min-height: 100vh;
-        padding-top: 160px;
+        padding-top: 160px; /* Colchón de espacio para el menú móvil */
         padding-bottom: 60px;
     }
     .header-hero-container {
-        /* Mantiene el flujo horizontal y la foto de fondo en tablets */
-        flex-direction: row !important; 
-        text-align: left;
-        gap: 20px;
+        flex-direction: column !important; /* Pasa a vertical en tablets/móviles */
+        text-align: center;
+        gap: 40px;
     }
     .header_name {
-        /* Achicamos un poco el área del texto para que no pise la foto de fondo */
-        width: 55%; 
+        width: 100%;
+    }
+    .headers_networks {
+        justify-content: center;
+        margin-top: 15px;
     }
     .header_name h1 {
         font-size: 3rem;
     }
     .information {
-        /* La sección Sobre Mí sí pasa a vertical en pantallas medianas */
         flex-direction: column;
     }
     .information .information_image, .information p {
@@ -330,30 +308,12 @@ body {
     }
 }
 
-/* 3. RESPONSIVE EXCLUSIVO PARA CELULARES (Menos de 768px) */
 @media screen and (max-width: 768px) {
     .container_nav {
         height: auto !important; 
         flex-direction: column !important; 
         padding: 15px 20px !important; 
         gap: 10px; 
-        background-color: rgba(0, 63, 71, 0.95) !important; 
-    }
-
-    .header-hero-container {
-        /* En celulares ya no hay espacio horizontal: todo va al centro y vertical */
-        flex-direction: column !important;
-        text-align: center;
-        background-image: none !important; /* Quitamos la foto de fondo para que no se encime */
-    }
-
-    .header_name {
-        width: 100%;
-    }
-
-    .headers_networks {
-        justify-content: center;
-        margin-top: 15px;
     }
 
     .header .nav {
@@ -380,7 +340,7 @@ body {
     }
 }
 
-/* Preferencias del Sistema (Modo Oscuro) */
+/* Preferencias del Sistema */
 @media (prefers-color-scheme: dark) {
     body { background-color: rgb(0, 25, 28); }
     .content-main section h2 { color: white; }
