@@ -147,8 +147,10 @@ body {
 .header .header_description {
     background-color: rgba(0, 63, 71, 0.8);
     width: 320px;
+    min-width: 320px;
     padding: 30px;
     border-radius: 10px;
+    backdrop-filter: blur(6px);
 
     display: flex;
     flex-direction: column;
@@ -158,8 +160,10 @@ body {
 }
 
 .header .header_description img {
-    display: block;
-    margin: 0 auto;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .header .header_description span {
@@ -301,16 +305,19 @@ body {
 @media screen and (max-width: 1344px) { 
     .container_nav {
         width: 90%;
-        left: 5%;
+        left: 50%;
+        transform: translateX(-50%);
     }
+
     .header-hero-container { 
         width: 90%; 
         gap: 30px; 
     } 
+
     .header_name h1 { 
         font-size: 3rem; 
     } 
-} 
+}
 
 @media screen and (max-width: 992px) { 
     .header { 
@@ -347,20 +354,25 @@ body {
 
 /* 2. ADAPTACIÓN EXCLUSIVA PARA CELULARES */ 
 @media screen and (max-width: 768px) {
+.container_nav {
+    width: 85%;
+    max-width: 1200px;
 
-    .container_nav {
-        width: 100%;
-        padding: 15px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        background: transparent;
-    
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    .header .nav ul {
-        gap: 20px;
-    }
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 25px 0;
+}
+
+.header .nav ul {
+    gap: 40px;
+}
 
     .header-title {
         font-size: 1.5rem;
