@@ -46,7 +46,7 @@ body {
 .header .nav ul {
     list-style: none;
     display: flex;
-    gap: 40px; /* Separación de palabras arriba */
+    gap: 40px; 
     align-items: center;
 }
 
@@ -82,11 +82,11 @@ body {
     padding-top: 80px; 
 }
 
-/* El contenedor se adaptará para mostrar tu foto sola en pantallas medianas */
+/* Contenedor adaptativo: preparado con transiciones suaves */
 .header-hero-container {
     width: 85%;
     max-width: 1200px;
-    height: 70vh; /* Le damos altura fija en el contenedor para que la foto luzca bien al quedarse sola */
+    height: 70vh; /* Altura asignada para cuando la foto quede sola y luzca estilizada */
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
@@ -95,12 +95,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out;
 }
 
 .header_name {
     color: white;
     width: 60%; 
+    transition: opacity 0.3s ease;
 }
 
 .header_name h4 {
@@ -136,7 +137,7 @@ body {
     transform: scale(1.2);
 }
 
-/* EL CONTENEDOR DE LA FOTO CHICA (Intacto para pantallas de escritorio grandes) */
+/* TU TARJETA FLOTANTE ORIGINAL (Se mantiene 100% intacta en pantallas grandes) */
 .header .header_description {
     background-color: rgba(0, 63, 71, 0.8);   
     width: 320px;
@@ -289,32 +290,32 @@ body {
 
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
 
-/* 1. EFECTO MENOS DE 1344PX: Desaparece todo el contenido del Hero y queda SOLO la foto nueva */
-@media screen and (max-width: 1344px) {
+/* 1. EFECTO AL LLEGAR A MENOS DE 1344PX */
+/* Desaparece el texto y la tarjeta chica, dejando únicamente la foto limpia centrada */
+@media screen and (max-width: 1343px) {
     .header-hero-container .header_description,
     .header-hero-container .header_name {
-        display: none !important; /* Esconde la tarjeta y también tu bloque de nombre/redes */
+        display: none !important; 
     }
     
     .header-hero-container {
-        /* Se activa únicamente la foto de fondo centrada ocupando el espacio */
         background-image: url("assets/foto(2).png"); 
         width: 100%;
     }
 }
 
-/* 2. EN CELULARES (Menos de 768px): Opcional por si en pantallas táctiles muy chicas prefieres quitar el fondo y mantener limpio el espacio */
+/* 2. OPTIMIZACIÓN DE NAVEGACIÓN PARA CELULARES (Menos de 768px) */
 @media screen and (max-width: 768px) {
     .container_nav {
         height: auto !important; 
         flex-direction: column !important; 
         padding: 15px 20px !important; 
         gap: 10px; 
-        background-color: rgba(0, 63, 71, 0.95) !important; 
+        background-color: rgba(0, 63, 71, 0.95) !important; /* Le añade fondo para que no colisione visualmente con tu foto */
     }
 
     .header-hero-container {
-        height: 50vh; /* Se achica un poco la altura en celulares */
+        height: 50vh; /* Reduce un poco la altura de la foto en pantallas móviles */
     }
 
     .header .nav {
