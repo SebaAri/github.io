@@ -271,7 +271,7 @@ body {
 }
 
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
-
+/*
 @media (max-width: 1024px) {
     .header-hero-container {
         flex-direction: column;
@@ -284,7 +284,7 @@ body {
     .header_name h1 {
         font-size: 3rem;
     }
-}
+}*/
 
 
 /*@media screen and (max-width: 768px) {
@@ -324,6 +324,58 @@ body {
     }
 }*/
 
+/* 1. CORRECCIÓN PARA PANTALLAS MEDIANAS (Eliminamos el display: none) */
+@media (max-width: 1344px) {
+    .header {
+        background-image: url("assets/Fondo.png"); /* Mantenemos tu fondo original */
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 140px; /* Espacio para que no tape la barra de arriba */
+        padding-bottom: 40px;
+    }
+
+    /* Forzamos a que el contenedor se ponga en vertical y se centre */
+    .header-hero-container {
+        flex-direction: column !important; 
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 40px;
+    }
+
+    /* ¡LA CLAVE!: Cambiamos el display: none por un bloque visible */
+    .header .header_description {
+        display: flex !important; /* <--- Cambiado de 'none' a 'flex' para que SÍ se vea */
+        position: static !important; /* Quita el float y el top relativo viejo */
+        margin: 0 auto !important;   /* La centra en la pantalla */
+        width: 320px !important;     /* Le damos un ancho fijo generoso para que no se achique */
+        height: 380px !important;    /* Alto suficiente para la foto y el texto */
+    }
+}
+
+/* 2. AJUSTE PARA PANTALLAS AÚN MÁS CHICAS (CELULARES) */
+@media (max-width: 768px) {
+    .header {
+        padding-top: 240px !important; /* Más espacio arriba porque el menú móvil es más gordo */
+    }
+
+    .header-hero-container {
+        flex-direction: column !important; /* Mantiene el orden vertical */
+    }
+
+    /* Nos aseguramos de que en celulares siga visible y grande */
+    .header .header_description {
+        display: flex !important;
+        width: 300px !important; /* Un cachito más angosto para que entre en celulares chicos */
+        height: 360px !important;
+    }
+    
+    .header .header_description img {
+        width: 200px !important; /* Mantiene la foto circular de un tamaño imponente */
+        height: 200px !important;
+    }
+}
+
+
 /* Preferencias del Sistema */
 @media (prefers-color-scheme: dark) {
     body { background-color: rgb(0, 25, 28); }
@@ -336,42 +388,3 @@ body {
 
 
 
-
-@media screen and (max-width: 768px) {
-    
-
-    .profile-frame {
-    
-        width: 100% !important;
-        max-width: 320px; 
-        height: auto !important; 
-        margin: 20px auto !important; 
-
-    
-        border: none !important; 
-        border-radius: 0 !important;
-        box-shadow: none !important; 
-        background-color: transparent !important;
-        
-    
-        overflow: visible !important; 
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-    }
-
-    
-    .profile-frame img {
-        position: static !important; 
-        transform: none !important; 
-        
-        
-        border-radius: 10px !important; 
-        
-        
-        width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important; 
-        max-height: 400px; 
-    }
-}
