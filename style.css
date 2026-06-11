@@ -290,32 +290,55 @@ body {
 
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
 
-/* 1. EFECTO AL LLEGAR A MENOS DE 1344PX */
-/* Desaparece el texto y la tarjeta chica, dejando únicamente la foto limpia centrada */
-@media screen and (max-width: 1343px) {
+/* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
+
+/* 1. CORRECCIÓN EFECTO MENOS DE 1344PX (Mantiene la cabecera) */
+@media screen and (max-width: 1344px) {
+    
+    /* ¡LA CLAVE!: Solo ocultamos el contenido del Hero, NO la cabecera */
     .header-hero-container .header_description,
     .header-hero-container .header_name {
         display: none !important; 
     }
     
+    /* El contenedor principal sí se prepara para mostrar la foto sola */
     .header-hero-container {
+        /* Se activa únicamente la foto de fondo centrada ocupando el espacio */
         background-image: url("assets/foto(2).png"); 
         width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    /* Nos aseguramos de que el contenedor de navegación (header) siga visible */
+    .container_nav {
+        display: flex !important; /* <--- Esto fuerza que siga visible en este rango */
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        background-color: transparent; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+        padding: 25px 20px; 
     }
 }
 
-/* 2. OPTIMIZACIÓN DE NAVEGACIÓN PARA CELULARES (Menos de 768px) */
+/* 2. EN CELULARES (Menos de 768px): Optimización para cabecera vertical y foto chica */
 @media screen and (max-width: 768px) {
     .container_nav {
+        display: flex !important; /* Mantenemos visible en móviles */
         height: auto !important; 
         flex-direction: column !important; 
         padding: 15px 20px !important; 
         gap: 10px; 
-        background-color: rgba(0, 63, 71, 0.95) !important; /* Le añade fondo para que no colisione visualmente con tu foto */
+        background-color: rgba(0, 63, 71, 0.95) !important; /* Añadimos fondo para legibilidad vertical */
     }
 
     .header-hero-container {
-        height: 50vh; /* Reduce un poco la altura de la foto en pantallas móviles */
+        height: 50vh; /* Se achica un poco la altura en celulares */
     }
 
     .header .nav {
@@ -341,6 +364,7 @@ body {
         padding: 5px 0; 
     }
 }
+
 
 /* Preferencias del Sistema (Modo Oscuro) */
 @media (prefers-color-scheme: dark) {
