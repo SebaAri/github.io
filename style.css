@@ -162,7 +162,7 @@ body {
 .content-main section {
     width: 100%;
     min-height: 100vh;
-    padding: 80px 20px;
+  /*  padding: 80px 20px;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
