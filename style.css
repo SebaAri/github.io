@@ -10,7 +10,7 @@ html {
     scroll-behavior: smooth;
     font-family: sans-serif, Arial, Helvetica;
     font-size: 16px;
-    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */
+    scroll-padding-top: 70px; 
 }
 
 body {
@@ -18,20 +18,20 @@ body {
     background-color: #f4f4f4;
 }
 
-/* --- NAVEGACIÓN (CORREGIDA Y SIN BACKGROUND) --- */
+/* NAVEGACIÓN*/ 
 .container_nav {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* 1. SE QUITÓ EL BACKGROUND: Ahora es totalmente transparente */
+    
     background-color: transparent; 
-    backdrop-filter: none; /* Quitamos también el desenfoque si no hay fondo */
+    backdrop-filter: none; 
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2000;
-    padding: 25px 20px; /* Un poco más de aire arriba y abajo */
+    padding: 25px 20px; 
 }
 
 .header .header-title {
@@ -41,20 +41,20 @@ body {
 }
 
 .header .nav {
-    /* 2. LIMPIEZA: Quitamos anchos y márgenes viejos que rompían el espacio */
+   
     width: auto; 
 }
 
 .header .nav ul {
     list-style: none;
     display: flex;
-    /* 3. SEPARACIÓN DE PALABRAS: Controla la distancia exacta desde aquí */
-    gap: 40px; /* <--- Aumenta o disminuye este número para separar más las palabras */
+    
+    gap: 40px; 
     align-items: center;
 }
 
 .nav ul li {
-    /* 4. LIMPIEZA: Quitamos el display viejo y el % que desajustaba el menú */
+   
     display: block; 
     margin: 0; 
 }
@@ -74,7 +74,7 @@ body {
 /* --- HERO / HEADER --- */
 .header { 
     width: 100%;
-    height: 100vh; /* Se mantiene en formato hoja completa */
+    height: 100vh;
     background-color: rgba(0, 63, 71, 0.95);
     background-image: url("assets/Fondo.png");
     background-position: center;
@@ -86,12 +86,12 @@ body {
     padding-top: 80px; 
 }
 
-/* CAJA MÁGICA: Nombre a la izquierda, foto al lado a la derecha */
+
 .header-hero-container {
     width: 85%;
     max-width: 1200px;
     display: flex;
-    flex-direction: row; /* Fuerza la alineación horizontal */
+    flex-direction: row; 
     justify-content: space-between;
     align-items: center;
     gap: 50px;
@@ -99,7 +99,7 @@ body {
 
 .header_name {
     color: white;
-    width: 60%; /* Toma espacio preferencial para el texto largo */
+    width: 60%;
 }
 
 .header_name h4 {
@@ -146,7 +146,7 @@ body {
     align-items: center;
     gap: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    flex-shrink: 0; /* Evita que la tarjeta se achique o aplaste */
+    flex-shrink: 0; 
 }
 
 .header .header_description img {
@@ -329,7 +329,7 @@ body {
         flex-direction: column !important; 
         padding: 15px 20px !important; 
         gap: 10px; 
-        /* 5. MÓVIL: En celulares sí le devolvemos fondo para que el menú sea legible sobre tu foto */
+       
         background-color: rgba(0, 63, 71, 0.95) !important;
     }
 
