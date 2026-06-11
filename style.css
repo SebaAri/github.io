@@ -308,6 +308,7 @@ body {
     .header .header-description {
         display: none;
     }
+   
     .header {
         background-image: url("../assets/foto(2).png");
         background-size: cover;       
