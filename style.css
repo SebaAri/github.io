@@ -10,7 +10,7 @@ html {
     scroll-behavior: smooth; 
     font-family: sans-serif, Arial, Helvetica; 
     font-size: 16px; 
-    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */ 
+    scroll-padding-top: 80px; 
 } 
 
 body { 
@@ -18,27 +18,26 @@ body {
     background-color: #f4f4f4; 
 } 
 
-/* --- NAVEGACIÓN (ALINEADA CON EL CONTENIDO) --- */ 
+/* --- NAVEGACIÓN COMPLETAMENTE ALINEADA --- */ 
 .container_nav {
-   width: 100%;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
+    width: 100%;             
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background: transparent;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center; 
+}
 
-   position: fixed;
-   top: 0;
-   left: 0;
-   z-index: 2000;
-
-   background: none;
-   backdrop-filter: none;
+.nav-inner {
     width: 85%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header .header-title { 
@@ -49,32 +48,26 @@ body {
 
 .header .nav {
     width: auto;
-    padding: 0;
 }
 
-.header .nav ul {
+.header .nav .nav-list {
     width: auto;
     padding: 0;
     margin: 0;
-
     display: flex;
-    align-items: center;
-    gap: 50px;
+    align-items: center; 
+    gap: 50px; /* Reducido levemente para evitar rupturas prematuras en pantallas de laptops */
+    list-style: none;
 }
 
-.nav ul li { 
-    display: block;  
-    margin: 0;  
-} 
-
-.nav ul li a { 
+.nav-list li a { 
     text-decoration: none; 
     color: rgb(184, 184, 184); 
     font-size: 1rem; 
     transition: color 0.3s, font-weight 0.3s; 
 } 
 
-.nav ul li a:hover { 
+.nav-list li a:hover { 
     color: white; 
     font-weight: 700; 
 } 
@@ -94,22 +87,22 @@ body {
     padding-top: 80px;  
 } 
 
-/* CAJA PRINCIPAL: Nombre a la izquierda, tarjeta a la derecha */ 
+/* CAJA PRINCIPAL (Mismo ancho simétrico que el menú superior) */ 
 .header-hero-container { 
-    
-    max-width: 1200px; 
+    width: 85%;              
+    max-width: 1200px;       
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
     align-items: center; 
     gap: 50px;
-    width: 95%;
-    max-width: 1400px;
 } 
 
 .header_name { 
     color: white; 
     width: 60%; 
+    display: flex;
+    flex-direction: column;
 } 
 
 .header_name h4 { 
@@ -145,7 +138,7 @@ body {
     transform: scale(1.2); 
 } 
 
-/* TARJETA FLOTANTE DE LA DERECHA */ 
+/* TARJETA DE LA FOTO (DERECHA) */ 
 .header .header_description {
     background-color: rgba(0, 63, 71, 0.8);
     width: 320px;
@@ -153,13 +146,11 @@ body {
     padding: 30px;
     border-radius: 10px;
     backdrop-filter: blur(6px);
-
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 15px;
-
     flex-shrink: 0;
 }
 
@@ -173,7 +164,7 @@ body {
 .header .header_description span {
     color: white;
     font-size: 1.1rem;
-}
+} 
 
 /* --- CONTENIDO PRINCIPAL --- */ 
 .content-main { 
@@ -183,12 +174,13 @@ body {
 .content-main section { 
     width: 100%; 
     min-height: 100vh; 
-    padding: 80px 20px; 
+    padding: 100px 20px 80px 20px; 
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
 } 
 
+/* Alternancia de fondos usando las clases nativas de tus secciones id */
 .content-main section:nth-child(even) { 
     background-color: rgb(0, 25, 28); 
 } 
@@ -199,7 +191,6 @@ body {
     font-size: 2.5rem; 
     font-family: 'Righteous', cursive; 
     margin-bottom: 40px; 
-    padding: 0; 
 } 
 
 .content-main section:nth-child(even) h2 { 
@@ -256,11 +247,8 @@ body {
     position: relative; 
     overflow: hidden; 
     border-radius: 15px; 
+    background-color: #555; /* Fondo de respaldo */
 } 
-
-.grid-projects .g-items:nth-child(1) { background-image: url("assets/google.png"); } 
-.grid-projects .g-items:nth-child(2) { background-image: url("assets/Logo.png"); } 
-.grid-projects .g-items:nth-child(3) { background-image: url("assets/spotify.png"); } 
 
 .grid-projects .g-items .overlay { 
     position: absolute; 
@@ -281,7 +269,7 @@ body {
     background-color: rgba(0, 63, 71, 0.85); 
 } 
 
-/* --- BOTÓN IR ARRIBA ORIGINAL RECONSTRUIDO --- */ 
+/* --- BOTÓN IR ARRIBA --- */ 
 .link_up { 
     width: 45px; 
     height: 45px; 
@@ -303,38 +291,36 @@ body {
     background-color: rgba(0, 63, 71, 1);
 }
 
-/* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */ 
+/* --- DESIGN RESPONSIVO TOTAL (PROBADO EN DISPOSITIVOS) --- */ 
 
-/* 1. ADAPTACIÓN PARA PANTALLAS PEQUEÑAS DE PC / TABLETS */ 
-@media screen and (max-width: 1344px) { 
-    .container_nav {
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .header-hero-container { 
+/* 1. PORTÁTILES Y PANTALLAS MEDIANAS */ 
+@media screen and (max-width: 1200px) { 
+    .nav-inner, .header-hero-container { 
         width: 90%; 
-        gap: 30px; 
     } 
-
+    .header .nav .nav-list {  
+        gap: 35px; 
+    }
     .header_name h1 { 
-        font-size: 3rem; 
+        font-size: 3.2rem; 
     } 
 }
 
+/* 2. TABLETS (Cambio coordinado a vertical, textos e iconos centrados) */ 
 @media screen and (max-width: 992px) { 
     .header { 
         height: auto !important; 
         min-height: 100vh; 
-        padding-top: 160px; 
+        padding-top: 130px; 
         padding-bottom: 60px; 
     } 
     .container_nav {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        padding: 25px 20px;
+        padding: 15px 0;
+        background-color: rgba(0, 63, 71, 0.95); /* Agrega consistencia al hacer scroll */
+        backdrop-filter: blur(5px);
+    }
+    .nav-inner {
+        width: 90%;
     }
     .header-hero-container { 
         flex-direction: column !important; 
@@ -343,6 +329,7 @@ body {
     } 
     .header_name { 
         width: 100%; 
+        align-items: center; /* Centra los textos de Ariel horizontalmente */
     } 
     .headers_networks { 
         justify-content: center; 
@@ -350,40 +337,48 @@ body {
     } 
     .information { 
         flex-direction: column; 
+        text-align: center;
     } 
     .information .information_image, .information p { 
         width: 100%; 
     } 
 } 
 
-/* 2. ADAPTACIÓN EXCLUSIVA PARA CELULARES */ 
-@media screen and (max-width: 768px) {
-.container_nav {
-    width: 85%;
-    max-width: 1200px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    padding: 25px 0;
-}
-
-.header .nav ul {
-    gap: 40px;
-}
-
-    .header-title {
-        font-size: 1.5rem;
+/* 3. DISPOSITIVOS MÓVILES (Evita desborde total de los enlaces) */ 
+@media screen and (max-width: 650px) {
+    html {
+        font-size: 14px; 
     }
+    .nav-inner {
+        flex-direction: column; /* Apila el logotipo 'ARIEL' arriba y el menú abajo */
+        gap: 10px;
+    }
+    .header .nav .nav-list {
+        gap: 20px; 
+    }
+    .header {
+        padding-top: 160px;
+    }
+    .header_name h1 {
+        font-size: 2.5rem;
+    }
+    .header .header_description {
+        width: 100%;
+        min-width: 0; 
+        max-width: 290px;
+    }
+}
 
-    .nav ul li a {
+/* 4. DISPOSITIVOS ULTRA PEQUEÑOS (Pantallas de 400px o menos) */
+@media screen and (max-width: 400px) {
+    .header .nav .nav-list {
+        gap: 12px; 
+    }
+    .nav-list li a {
         font-size: 0.9rem;
+    }
+    .header_name h1 {
+        font-size: 2rem;
     }
 }
 
