@@ -41,6 +41,7 @@ body {
 
 .header .nav {
     width: auto;
+    top: 20px;
 }
 
 .header .nav ul {
