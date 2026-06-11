@@ -96,13 +96,15 @@ body {
 
 /* CAJA PRINCIPAL: Nombre a la izquierda, tarjeta a la derecha */ 
 .header-hero-container { 
-    width: 85%; 
+    
     max-width: 1200px; 
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
     align-items: center; 
-    gap: 50px; 
+    gap: 50px;
+    width: 95%;
+    max-width: 1400px;
 } 
 
 .header_name { 
@@ -157,11 +159,13 @@ body {
     align-items: center;
     text-align: center;
     gap: 15px;
+
+    flex-shrink: 0;
 }
 
 .header .header_description img {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
 }
