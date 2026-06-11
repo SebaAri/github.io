@@ -10,11 +10,12 @@ html {
     scroll-behavior: smooth;
     font-family: sans-serif, Arial, Helvetica;
     font-size: 16px;
+    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */
 }
 
 body {
     width: 100%;
-    background-color: #f4f4f4; /* Fondo por defecto para que contraste el texto oscuro */
+    background-color: #f4f4f4;
 }
 
 /* --- NAVEGACIÓN --- */
@@ -30,7 +31,6 @@ body {
     left: 0;
     z-index: 2000;
     padding: 20px 20px;
-
 }
 
 .header .header-title {
@@ -65,7 +65,7 @@ body {
 /* --- HERO / HEADER --- */
 .header { 
     width: 100%;
-    min-height: 100vh;
+    height: 100vh; /* Se mantiene en formato hoja completa */
     background-color: rgba(0, 63, 71, 0.95);
     background-image: url("assets/Fondo.png");
     background-position: center;
@@ -74,13 +74,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px; /* Para que el menú fijo no tape el contenido */
+    padding-top: 80px; 
 }
 
+/* CAJA MÁGICA: Nombre a la izquierda, foto al lado a la derecha */
 .header-hero-container {
     width: 85%;
     max-width: 1200px;
     display: flex;
+    flex-direction: row; /* Fuerza la alineación horizontal */
     justify-content: space-between;
     align-items: center;
     gap: 50px;
@@ -88,6 +90,7 @@ body {
 
 .header_name {
     color: white;
+    width: 60%; /* Toma espacio preferencial para el texto largo */
 }
 
 .header_name h4 {
@@ -99,6 +102,7 @@ body {
 .header_name h1 {
     font-size: 4rem;
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .header_name h1::first-letter {
@@ -133,6 +137,7 @@ body {
     align-items: center;
     gap: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    flex-shrink: 0; /* Evita que la tarjeta se achique o aplaste */
 }
 
 .header .header_description img {
@@ -271,10 +276,22 @@ body {
 }
 
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
-@media (max-width: 1024px) {
+
+/* Ajustado para que en laptops se mantengan al lado, y pase a vertical solo en pantallas chicas */
+@media (max-width: 992px) {
+    .header {
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 160px; /* Colchón de espacio para el menú móvil */
+        padding-bottom: 60px;
+    }
     .header-hero-container {
-        flex-direction: column;
+        flex-direction: column !important; /* Pasa a vertical en tablets/móviles */
         text-align: center;
+        gap: 40px;
+    }
+    .header_name {
+        width: 100%;
     }
     .headers_networks {
         justify-content: center;
@@ -283,12 +300,15 @@ body {
     .header_name h1 {
         font-size: 3rem;
     }
+    .information {
+        flex-direction: column;
+    }
+    .information .information_image, .information p {
+        width: 100%;
+    }
 }
 
-
 @media screen and (max-width: 768px) {
-    
-    
     .container_nav {
         height: auto !important; 
         flex-direction: column !important; 
@@ -301,7 +321,6 @@ body {
         justify-content: center;
     }
 
-    
     .header .nav ul {
         flex-direction: column !important; 
         gap: 12px !important; 
@@ -309,12 +328,10 @@ body {
         text-align: center; 
     }
 
-
     .header .nav ul li {
         margin: 0 !important;
         width: 100%;
     }
-
 
     .nav ul li a {
         font-size: 1.1rem !important;
@@ -323,12 +340,9 @@ body {
     }
 }
 
-
 /* Preferencias del Sistema */
 @media (prefers-color-scheme: dark) {
     body { background-color: rgb(0, 25, 28); }
     .content-main section h2 { color: white; }
     .information p { color: white; }
 }
-
-
