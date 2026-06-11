@@ -293,7 +293,7 @@ body {
 
 /* 1. ADAPTACIÓN PARA PANTALLAS PEQUEÑAS DE PC / TABLETS */ 
 @media screen and (max-width: 1344px) { 
-  /*  .container_nav {
+    .container_nav {
         width: 90%;
         left: 5%;
     }
@@ -303,19 +303,7 @@ body {
     } 
     .header_name h1 { 
         font-size: 3rem; 
-    } */
-
-    .header .header-description {
-        display: none;
-    }
-   
-    .header {
-        background-image: url("../assets/foto(2).png");
-        background-size: cover;       
-        background-position: center; 
-        background-repeat: no-repeat;
-    
-    }
+    } 
 } 
 
 @media screen and (max-width: 992px) { 
