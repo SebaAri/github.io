@@ -10,7 +10,7 @@ html {
     scroll-behavior: smooth;
     font-family: sans-serif, Arial, Helvetica;
     font-size: 16px;
-    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */
+    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al h
 }
 
 body {
