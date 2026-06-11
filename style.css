@@ -1,398 +1,388 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-} 
-
-html { 
-    scroll-behavior: smooth; 
-    font-family: sans-serif, Arial, Helvetica; 
-    font-size: 16px; 
-    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */ 
-} 
-
-body { 
-    width: 100%; 
-    background-color: #f4f4f4; 
-} 
-
-/* --- NAVEGACIÓN (ALINEADA PERFECTAMENTE) --- */ 
-.container_nav { 
-    width: 85%; /* Mismo ancho que el contenedor de la foto y texto */ 
-    max-width: 1200px; /* Mismo tope de ancho */ 
-    margin: 0 auto; /* Lo centra en la pantalla */ 
-    display: flex; 
-    justify-content: space-between; /* Envía ARIEL a la izquierda y el menú a la derecha */ 
-    align-items: center; 
-    background-color: transparent;  
-    backdrop-filter: none; 
-    position: fixed; 
-    top: 0; 
-    left: 7.5%; /* Lo centra respecto al 85% del ancho de la pantalla */ 
-    z-index: 2000; 
-    padding: 25px 0; 
-} 
-
-.header .header-title { 
-    color: white; 
-    font-family: 'Righteous', sans-serif; 
-    font-size: 2rem; 
-} 
-
-.header .nav { 
-    width: auto;  
-} 
-
-.header .nav ul { 
-    list-style: none; 
-    display: flex; 
-    gap: 40px; 
-    align-items: center; 
-} 
-
-.nav ul li { 
-    display: block;  
-    margin: 0;  
-} 
-
-.nav ul li a { 
-    text-decoration: none; 
-    color: rgb(184, 184, 184); 
-    font-size: 1rem; 
-    transition: color 0.3s, font-weight 0.3s; 
-} 
-
-.nav ul li a:hover { 
-    color: white; 
-    font-weight: 700; 
-} 
-
-/* --- HERO / HEADER --- */ 
-.header {  
-    width: 100%; 
-    height: 100vh; 
-    background-color: rgba(0, 63, 71, 0.95); 
-    background-image: url("assets/Fondo.png"); 
-    background-position: center; 
-    background-blend-mode: multiply; 
-    background-size: cover; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    padding-top: 80px;  
-} 
-
-/* Contenedor preparado para recibir la foto de fondo al achicar */ 
-.header-hero-container { 
-    width: 85%; 
-    max-width: 1200px; 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-between; 
-    align-items: center; 
-    gap: 50px; 
-    background-repeat: no-repeat;
-    background-position: right center; /* Se alinea a la derecha respetando el diseño */
-    background-size: contain;
-    transition: background 0.3s ease;
-} 
-
-.header_name { 
-    color: white; 
-    width: 55%; 
-} 
-
-.header_name h4 { 
-    color: rgb(224, 224, 224); 
-    font-size: 2.5rem; 
-    font-weight: 100; 
-} 
-
-.header_name h1 { 
-    font-size: 4rem; 
-    margin-bottom: 20px; 
-    line-height: 1.2; 
-} 
-
-.header_name h1::first-letter { 
-    background-color: rgba(0, 63, 71, 0.8); 
-    padding: 0 10px; 
-    border-radius: 10px; 
-} 
-
-.headers_networks { 
-    display: flex; 
-    gap: 20px; 
-} 
-
-.headers_networks a i { 
-    color: white; 
-    font-size: 2rem; 
-    transition: transform 0.3s; 
-} 
-
-.headers_networks a i:hover { 
-    transform: scale(1.2); 
-} 
-
-/* TARJETA FLOTANTE ORIGINAL */ 
-.header .header_description { 
-    background-color: rgba(0, 63, 71, 0.8);    
-    width: 320px; 
-    padding: 30px; 
-    border-radius: 10px; 
-    backdrop-filter: blur(6px); 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    gap: 20px; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
-    flex-shrink: 0; 
-    transition: opacity 0.3s ease, transform 0.3s ease;
-} 
-
-.header .header_description img { 
-    width: 200px; 
-    height: 200px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-} 
-
-.header .header_description span { 
-    color: white; 
-    font-size: 1.1rem; 
-    text-align: center; 
-} 
-
-/* --- CONTENIDO PRINCIPAL --- */ 
-.content-main { 
-    width: 100%; 
-} 
-
-.content-main section { 
-    width: 100%; 
-    min-height: 100vh; 
-    padding: 80px 20px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-} 
-
-.content-main section:nth-child(even) { 
-    background-color: rgb(0, 25, 28); 
-} 
-
-.content-main section h2 { 
-    color: rgb(0, 25, 28); 
-    text-align: center; 
-    font-size: 2.5rem; 
-    font-family: 'Righteous', cursive; 
-    margin-bottom: 40px; 
-    padding: 0; 
-} 
-
-.content-main section:nth-child(even) h2 { 
-    color: white; 
-} 
-
-/* Sobre Mí */ 
-.information { 
-    width: 85%; 
-    max-width: 1000px; 
-    margin: 0 auto; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-around; 
-    gap: 40px; 
-} 
-
-.information .information_image { 
-    width: 45%; 
-} 
-
-.information .information_image img { 
-     width: 100%; 
-     height: auto; 
-     border-radius: 15px; 
-} 
-
-.information p { 
-    color: #333; 
-    width: 50%; 
-    font-size: 1.2rem; 
-    line-height: 1.6; 
-} 
-
-.content-main section:nth-child(even) .information p { 
-    color: white; 
-} 
-
-/* Proyectos (Grid) */ 
-.grid-projects { 
-    width: 85%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 30px; 
-} 
-
-.grid-projects .g-items { 
-    height: 350px; 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    position: relative; 
-    overflow: hidden; 
-    border-radius: 15px; 
-} 
-
-.grid-projects .g-items:nth-child(1) { background-image: url("assets/google.png"); } 
-.grid-projects .g-items:nth-child(2) { background-image: url("assets/Logo.png"); } 
-.grid-projects .g-items:nth-child(3) { background-image: url("assets/spotify.png"); } 
-
-.grid-projects .g-items .overlay { 
-    position: absolute; 
-    bottom: 0; 
-    left: 0; 
-    background-color: rgba(0, 63, 71, 0.95); 
-    width: 100%; 
-    height: 40%; 
-    color: white; 
-    font-size: 1.5rem; 
-    display: grid; 
-    place-items: center; 
-    transition: height 0.3s ease; 
-} 
-
-.grid-projects .g-items:hover .overlay { 
-    height: 100%; 
-    background-color: rgba(0, 63, 71, 0.85); 
-} 
-
-/* --- BOTÓN IR ARRIBA ORIGINAL --- */ 
-.link_up { 
-    width: 45px; 
-    height: 45px; 
-    background-color: rgba(0, 63, 71, 0.8);  
-    color: white; 
-    position: fixed; 
-    bottom: 20px; 
-    right: 20px; 
-    font-size: 1.5em; 
-    display: grid; 
-    place-items: center; 
-    text-decoration: none; 
-    border-radius: 5px; 
-    z-index: 1000; 
-    transition: background-color 0.3s;
-} 
-
-.link_up:hover {
-    background-color: rgba(0, 63, 71, 1);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */ 
+html {
+    scroll-behavior: smooth;
+    font-family: sans-serif, Arial, Helvetica;
+    font-size: 16px;
+    scroll-padding-top: 70px; /* Evita que el menú fijo tape los títulos al hacer scroll */
+}
 
-/* 1. EFECTO ENTRE 993PX Y 1344PX (PANTALLAS MEDIANAS) */ 
-/* Aquí la tarjeta chica se oculta y la foto limpia pasa a ser fondo del lateral derecho */
-@media screen and (max-width: 1344px) and (min-width: 993px) { 
-    .header-hero-container .header_description { 
-        display: none !important; /* Quitamos la tarjeta flotante */
-    } 
-    .header-hero-container { 
-        background-image: url("assets/foto(2).png"); /* Tu foto limpia queda de fondo a la derecha */
-        width: 85%; 
-    } 
-    .container_nav {
-        width: 85%;
-        left: 7.5%;
+body {
+    width: 100%;
+    background-color: #f4f4f4;
+}
+
+/* --- NAVEGACIÓN --- */
+.container_nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent; 
+    backdrop-filter: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 25px 20px; 
+}
+
+.header .header-title {
+    color: white;
+    font-family: 'Righteous', sans-serif;
+    font-size: 2rem;
+}
+
+.header .nav {
+    width: auto; 
+}
+
+.header .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Separación de palabras arriba */
+    align-items: center;
+}
+
+.nav ul li {
+    display: block; 
+    margin: 0; 
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: rgb(184, 184, 184);
+    font-size: 1rem;
+    transition: color 0.3s, font-weight 0.3s;
+}
+
+.nav ul li a:hover {
+    color: white;
+    font-weight: 700;
+}
+
+/* --- HERO / HEADER --- */
+.header { 
+    width: 100%;
+    height: 100vh; 
+    background-color: rgba(0, 63, 71, 0.95);
+    background-image: url("assets/Fondo.png");
+    background-position: center;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; 
+}
+
+/* Contenedor preparado para recibir la foto de fondo cuando achiques la pantalla */
+.header-hero-container {
+    width: 85%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+    transition: background 0.3s ease;
+}
+
+.header_name {
+    color: white;
+    width: 60%; 
+    transition: width 0.3s ease;
+}
+
+.header_name h4 {
+    color: rgb(224, 224, 224);
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+
+.header_name h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.header_name h1::first-letter {
+    background-color: rgba(0, 63, 71, 0.8);
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+.headers_networks {
+    display: flex;
+    gap: 20px;
+}
+
+.headers_networks a i {
+    color: white;
+    font-size: 2rem;
+    transition: transform 0.3s;
+}
+
+.headers_networks a i:hover {
+    transform: scale(1.2);
+}
+
+/* EL CONTENEDOR DE LA FOTO CHICA (Intacto para pantallas grandes) */
+.header .header_description {
+    background-color: rgba(0, 63, 71, 0.8);   
+    width: 320px;
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    flex-shrink: 0; 
+}
+
+.header .header_description img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header .header_description span {
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.content-main {
+    width: 100%;
+}
+
+.content-main section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-main section:nth-child(even) {
+    background-color: rgb(0, 25, 28);
+}
+
+.content-main section h2 {
+    color: rgb(0, 25, 28);
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Righteous', cursive;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+.content-main section:nth-child(even) h2 {
+    color: white;
+}
+
+/* Sobre Mí */
+.information {
+    width: 85%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.information .information_image {
+    width: 45%;
+}
+
+.information .information_image img {
+     width: 100%;
+     height: auto;
+     border-radius: 15px;
+}
+
+.information p {
+    color: #333;
+    width: 50%;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.content-main section:nth-child(even) .information p {
+    color: white;
+}
+
+/* Proyectos (Grid) */
+.grid-projects {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.grid-projects .g-items {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.grid-projects .g-items:nth-child(1) { background-image: url("assets/google.png"); }
+.grid-projects .g-items:nth-child(2) { background-image: url("assets/Logo.png"); }
+.grid-projects .g-items:nth-child(3) { background-image: url("assets/spotify.png"); }
+
+.grid-projects .g-items .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 63, 71, 0.95);
+    width: 100%;
+    height: 40%;
+    color: white;
+    font-size: 1.5rem;
+    display: grid;
+    place-items: center;
+    transition: height 0.3s ease;
+}
+
+.grid-projects .g-items:hover .overlay {
+    height: 100%;
+    background-color: rgba(0, 63, 71, 0.85);
+}
+
+/* Botón Ir Arriba */
+.link_up {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0, 63, 71, 0.8); 
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5em;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
+
+/* 1. SE ACTIVABA A LOS 1344PX (Y se extiende hacia abajo para cubrir menores de 993px) */
+@media screen and (max-width: 1344px) {
+    .header-hero-container .header_description {
+        display: none !important; /* Desaparece por completo la tarjeta chica */
+    }
+    .header-hero-container {
+        /* Tu foto limpia pasa a ser el fondo del lateral derecho */
+        background-image: url("assets/foto(2).png"); 
+    }
+}
+
+/* 2. RESPONSIVE PARA TABLETS Y PANTAILLAS MEDIANAS (Modificado para mantener la foto de fondo) */
+@media (max-width: 992px) {
+    .header {
+        height: auto !important;
+        min-height: 100vh;
+        padding-top: 160px;
+        padding-bottom: 60px;
+    }
+    .header-hero-container {
+        /* Mantiene el flujo horizontal y la foto de fondo en tablets */
+        flex-direction: row !important; 
+        text-align: left;
+        gap: 20px;
     }
     .header_name {
-        width: 50%; /* Evita que el texto invada el espacio de la foto de fondo */
+        /* Achicamos un poco el área del texto para que no pise la foto de fondo */
+        width: 55%; 
     }
-} 
-
-/* 2. ADAPTACIÓN PARA TABLETS (Menos de 992px) */ 
-@media screen and (max-width: 992px) { 
-    .header { 
-        height: auto !important; 
-        min-height: 100vh; 
-        padding-top: 160px; 
-        padding-bottom: 60px; 
-    } 
-    .container_nav {
-        position: absolute;
+    .header_name h1 {
+        font-size: 3rem;
+    }
+    .information {
+        /* La sección Sobre Mí sí pasa a vertical en pantallas medianas */
+        flex-direction: column;
+    }
+    .information .information_image, .information p {
         width: 100%;
-        left: 0;
-        padding: 25px 20px;
     }
-    /* Se ordena todo al centro en vertical de forma limpia */
-    .header-hero-container { 
+}
+
+/* 3. RESPONSIVE EXCLUSIVO PARA CELULARES (Menos de 768px) */
+@media screen and (max-width: 768px) {
+    .container_nav {
+        height: auto !important; 
         flex-direction: column !important; 
-        text-align: center; 
-        gap: 40px; 
-        background-image: none !important; /* Apaga el fondo para usar la tarjeta original abajo */
-    } 
-    .header-hero-container .header_description {
-        display: flex !important; /* Devuelve la tarjeta original para que se vea abajo del texto */
-    }
-    .header_name { 
-        width: 100%; 
-    } 
-    .headers_networks { 
-        justify-content: center; 
-        margin-top: 15px; 
-    } 
-    .information { 
-        flex-direction: column; 
-    } 
-    .information .information_image, .information p { 
-        width: 100%; 
-    } 
-} 
-
-/* 3. ADAPTACIÓN EXCLUSIVA PARA CELULARES (Menos de 768px) */ 
-@media screen and (max-width: 768px) { 
-    .container_nav { 
-        position: fixed;
-        left: 0;
-        height: auto !important;  
-        flex-direction: column !important;  
-        padding: 15px 20px !important;  
-        gap: 10px;  
+        padding: 15px 20px !important; 
+        gap: 10px; 
         background-color: rgba(0, 63, 71, 0.95) !important; 
-    } 
+    }
 
-    .header .nav { 
-        width: 100% !important; 
-        justify-content: center; 
-    } 
+    .header-hero-container {
+        /* En celulares ya no hay espacio horizontal: todo va al centro y vertical */
+        flex-direction: column !important;
+        text-align: center;
+        background-image: none !important; /* Quitamos la foto de fondo para que no se encime */
+    }
 
-    .header .nav ul { 
-        flex-direction: column !important;  
-        gap: 12px !important;  
-        width: 100% !important; 
-        text-align: center;  
-    } 
+    .header_name {
+        width: 100%;
+    }
 
-    .header .nav ul li { 
-        margin: 0 !important; 
-        width: 100%; 
-    } 
+    .headers_networks {
+        justify-content: center;
+        margin-top: 15px;
+    }
 
-    .nav ul li a { 
-        font-size: 1.1rem !important; 
-        display: block; 
-        padding: 5px 0;  
-    } 
-} 
+    .header .nav {
+        width: 100% !important;
+        justify-content: center;
+    }
 
-/* Preferencias del Sistema (Modo Oscuro) */ 
-@media (prefers-color-scheme: dark) { 
-    body { background-color: rgb(0, 25, 28); } 
-    .content-main section h2 { color: white; } 
-    .information p { color: white; } 
+    .header .nav ul {
+        flex-direction: column !important; 
+        gap: 12px !important; 
+        width: 100% !important;
+        text-align: center; 
+    }
+
+    .header .nav ul li {
+        margin: 0 !important;
+        width: 100%;
+    }
+
+    .nav ul li a {
+        font-size: 1.1rem !important;
+        display: block;
+        padding: 5px 0; 
+    }
+}
+
+/* Preferencias del Sistema (Modo Oscuro) */
+@media (prefers-color-scheme: dark) {
+    body { background-color: rgb(0, 25, 28); }
+    .content-main section h2 { color: white; }
+    .information p { color: white; }
 }
