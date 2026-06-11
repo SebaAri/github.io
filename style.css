@@ -82,18 +82,20 @@ body {
     padding-top: 80px; 
 }
 
+/* El contenedor se adaptará para mostrar tu foto sola en pantallas medianas */
 .header-hero-container {
     width: 85%;
     max-width: 1200px;
+    height: 70vh; /* Le damos altura fija en el contenedor para que la foto luzca bien al quedarse sola */
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
     align-items: center;
     gap: 50px;
     background-repeat: no-repeat;
-    background-position: right center;
-    background-size: contain; /* Prepara el contenedor para recibir la foto de fondo */
-    transition: background 0.3s ease;
+    background-position: center;
+    background-size: contain;
+    transition: all 0.3s ease;
 }
 
 .header_name {
@@ -134,6 +136,7 @@ body {
     transform: scale(1.2);
 }
 
+/* EL CONTENEDOR DE LA FOTO CHICA (Intacto para pantallas de escritorio grandes) */
 .header .header_description {
     background-color: rgba(0, 63, 71, 0.8);   
     width: 320px;
@@ -286,57 +289,32 @@ body {
 
 /* --- RESPONSIVE DESIGN (MEDIA QUERIES) --- */
 
-/* 1. MEJORA DE 1344PX (CORREGIDA) */
+/* 1. EFECTO MENOS DE 1344PX: Desaparece todo el contenido del Hero y queda SOLO la foto nueva */
 @media screen and (max-width: 1344px) {
-    .header-hero-container .header_description {
-        display: none !important; /* Esconde el recuadro 4x4 */
+    .header-hero-container .header_description,
+    .header-hero-container .header_name {
+        display: none !important; /* Esconde la tarjeta y también tu bloque de nombre/redes */
     }
+    
     .header-hero-container {
-        /* Introduce tu foto normal limpia de fondo a la derecha */
+        /* Se activa únicamente la foto de fondo centrada ocupando el espacio */
         background-image: url("assets/foto(2).png"); 
-    }
-} /* <--- ¡Llave de cierre agregada correctamente! */
-
-/* 2. RESPONSIVE GENERAL PARA TABLETS */
-@media (max-width: 992px) {
-    .header {
-        height: auto !important;
-        min-height: 100vh;
-        padding-top: 160px;
-        padding-bottom: 60px;
-    }
-    .header-hero-container {
-        flex-direction: column !important;
-        text-align: center;
-        gap: 40px;
-        background-image: none !important; /* Quitamos la foto de fondo para que no tape el texto en vertical */
-    }
-    .header_name {
-        width: 100%;
-    }
-    .headers_networks {
-        justify-content: center;
-        margin-top: 15px;
-    }
-    .header_name h1 {
-        font-size: 3rem;
-    }
-    .information {
-        flex-direction: column;
-    }
-    .information .information_image, .information p {
         width: 100%;
     }
 }
 
-/* 3. RESPONSIVE PARA CELULARES */
+/* 2. EN CELULARES (Menos de 768px): Opcional por si en pantallas táctiles muy chicas prefieres quitar el fondo y mantener limpio el espacio */
 @media screen and (max-width: 768px) {
     .container_nav {
         height: auto !important; 
         flex-direction: column !important; 
         padding: 15px 20px !important; 
         gap: 10px; 
-        background-color: rgba(0, 63, 71, 0.95) !important; /* Fondo dinámico para que se lea el menú vertical */
+        background-color: rgba(0, 63, 71, 0.95) !important; 
+    }
+
+    .header-hero-container {
+        height: 50vh; /* Se achica un poco la altura en celulares */
     }
 
     .header .nav {
