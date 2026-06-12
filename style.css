@@ -40,26 +40,23 @@ body {
     align-items: center;
 }
 
-/* CORRECCIÓN: Eliminado prefijo .header para que tome el estilo correctamente */
 .header-title { 
     color: white; 
     font-family: 'Righteous', sans-serif; 
     font-size: 2rem; 
 } 
 
-/* CORRECCIÓN: Eliminado prefijo .header y padding excesivo que rompía la alineación */
 .nav {
     width: auto;
 }
 
-/* CORRECCIÓN: Aumentado el gap a 75px para mayor separación y removido prefijos inválidos */
 .nav-list {
     width: auto;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center; 
-    gap: 75px; /* Mayor separación entre palabras */
+    gap: 75px; 
     list-style: none;
 }
 
@@ -90,7 +87,6 @@ body {
     padding-top: 80px;  
 } 
 
-/* CAJA PRINCIPAL (Mismo ancho simétrico que el menú superior) */ 
 .header-hero-container { 
     width: 85%;              
     max-width: 1200px;       
@@ -183,24 +179,29 @@ body {
     justify-content: center; 
 } 
 
-/* Alternancia de fondos usando las clases nativas de tus secciones id */
-.content-main section:nth-child(even) { 
+/* CORRECCIÓN: Forzamos el fondo claro e inicializamos estilos para secciones IMPARES (1, 3, 5...) */
+.content-main section:nth-of-type(odd) { 
+    background-color: #f4f4f4; 
+} 
+.content-main section:nth-of-type(odd) h2 { 
+    color: rgb(0, 25, 28); 
+} 
+.content-main section:nth-of-type(odd) .information p { 
+    color: #333; 
+} 
+
+/* CORRECCIÓN: Forzamos el fondo oscuro y estilos para secciones PARES (2, 4, 6...) */
+.content-main section:nth-of-type(even) { 
     background-color: rgb(0, 25, 28); 
 } 
-
-.content-main section h2 { 
-    color: rgb(0, 25, 28); 
-    text-align: center; 
-    font-size: 2.5rem; 
-    font-family: 'Righteous', cursive; 
-    margin-bottom: 40px; 
+.content-main section:nth-of-type(even) h2 { 
+    color: white; 
 } 
-
-.content-main section:nth-child(even) h2 { 
+.content-main section:nth-of-type(even) .information p { 
     color: white; 
 } 
 
-/* Sobre Mí */ 
+/* Sobre Mí Base */ 
 .information { 
     width: 85%; 
     max-width: 1000px; 
@@ -222,14 +223,16 @@ body {
 } 
 
 .information p { 
-    color: #333; 
     width: 50%; 
     font-size: 1.2rem; 
     line-height: 1.6; 
 } 
 
-.content-main section:nth-child(even) .information p { 
-    color: white; 
+.content-main section h2 { 
+    text-align: center; 
+    font-size: 2.5rem; 
+    font-family: 'Righteous', cursive; 
+    margin-bottom: 40px; 
 } 
 
 /* Proyectos (Grid) */ 
@@ -250,7 +253,7 @@ body {
     position: relative; 
     overflow: hidden; 
     border-radius: 15px; 
-    background-color: #555; /* Fondo de respaldo */
+    background-color: #555; 
 } 
 
 .grid-projects .g-items .overlay { 
@@ -294,7 +297,7 @@ body {
     background-color: rgba(0, 63, 71, 1);
 }
 
-/* --- DESIGN RESPONSIVO TOTAL (PROBADO EN DISPOSITIVOS) --- */ 
+/* --- DESIGN RESPONSIVO TOTAL --- */ 
 @media (width <= 1344px){
     .header .header_description {
         display: none
@@ -303,12 +306,11 @@ body {
         background-image: url("assets/foto(2).png")
     }
 }
-/* 1. PORTÁTILES Y PANTALLAS MEDIANAS */ 
+
 @media screen and (max-width: 1200px) { 
     .nav-inner, .header-hero-container { 
         width: 90%; 
     } 
-    /* CORRECCIÓN: Selector corregido para mantener responsividad */
     .nav-list {  
         gap: 45px; 
     }
@@ -317,7 +319,6 @@ body {
     } 
 }
 
-/* 2. TABLETS (Cambio coordinado a vertical, textos e iconos centrados) */ 
 @media screen and (max-width: 992px) { 
     .header { 
         height: auto !important; 
@@ -327,7 +328,7 @@ body {
     } 
     .container_nav {
         padding: 15px 0;
-        background-color: rgba(0, 63, 71, 0.95); /* Agrega consistencia al hacer scroll */
+        background-color: rgba(0, 63, 71, 0.95); 
         backdrop-filter: blur(5px);
     }
     .nav-inner {
@@ -340,7 +341,7 @@ body {
     } 
     .header_name { 
         width: 100%; 
-        align-items: center; /* Centra los textos de Ariel horizontalmente */
+        align-items: center; 
     } 
     .headers_networks { 
         justify-content: center; 
@@ -355,16 +356,14 @@ body {
     } 
 } 
 
-/* 3. DISPOSITIVOS MÓVILES (Evita desborde total de los enlaces) */ 
 @media screen and (max-width: 650px) {
     html {
         font-size: 14px; 
     }
     .nav-inner {
-        flex-direction: column; /* Apila el logotipo 'ARIEL' arriba y el menú abajo */
+        flex-direction: column; 
         gap: 10px;
     }
-    /* CORRECCIÓN: Selector corregido */
     .nav-list {
         gap: 25px; 
     }
@@ -381,9 +380,7 @@ body {
     }
 }
 
-/* 4. DISPOSITIVOS ULTRA PEQUEÑOS (Pantallas de 400px o menos) */
 @media screen and (max-width: 400px) {
-    /* CORRECCIÓN: Selector corregido */
     .nav-list {
         gap: 15px; 
     }
