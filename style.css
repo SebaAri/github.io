@@ -40,23 +40,26 @@ body {
     align-items: center;
 }
 
-.header .header-title { 
+/* CORRECCIÓN: Eliminado prefijo .header para que tome el estilo correctamente */
+.header-title { 
     color: white; 
     font-family: 'Righteous', sans-serif; 
     font-size: 2rem; 
 } 
 
-.header .nav {
+/* CORRECCIÓN: Eliminado prefijo .header y padding excesivo que rompía la alineación */
+.nav {
     width: auto;
 }
 
-.header .nav .nav-list {
+/* CORRECCIÓN: Aumentado el gap a 75px para mayor separación y removido prefijos inválidos */
+.nav-list {
     width: auto;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center; 
-    gap: 50px; /* Reducido levemente para evitar rupturas prematuras en pantallas de laptops */
+    gap: 75px; /* Mayor separación entre palabras */
     list-style: none;
 }
 
@@ -292,14 +295,22 @@ body {
 }
 
 /* --- DESIGN RESPONSIVO TOTAL (PROBADO EN DISPOSITIVOS) --- */ 
-
+@media (width <= 1344px){
+    .header .header_description {
+        display: none
+    }
+    .header {
+        background-image: url("assets/foto(2).png")
+    }
+}
 /* 1. PORTÁTILES Y PANTALLAS MEDIANAS */ 
 @media screen and (max-width: 1200px) { 
     .nav-inner, .header-hero-container { 
         width: 90%; 
     } 
-    .header .nav .nav-list {  
-        gap: 35px; 
+    /* CORRECCIÓN: Selector corregido para mantener responsividad */
+    .nav-list {  
+        gap: 45px; 
     }
     .header_name h1 { 
         font-size: 3.2rem; 
@@ -353,8 +364,9 @@ body {
         flex-direction: column; /* Apila el logotipo 'ARIEL' arriba y el menú abajo */
         gap: 10px;
     }
-    .header .nav .nav-list {
-        gap: 20px; 
+    /* CORRECCIÓN: Selector corregido */
+    .nav-list {
+        gap: 25px; 
     }
     .header {
         padding-top: 160px;
@@ -371,8 +383,9 @@ body {
 
 /* 4. DISPOSITIVOS ULTRA PEQUEÑOS (Pantallas de 400px o menos) */
 @media screen and (max-width: 400px) {
-    .header .nav .nav-list {
-        gap: 12px; 
+    /* CORRECCIÓN: Selector corregido */
+    .nav-list {
+        gap: 15px; 
     }
     .nav-list li a {
         font-size: 0.9rem;
