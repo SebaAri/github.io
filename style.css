@@ -183,9 +183,13 @@ body {
 .content-main section:nth-of-type(odd) { 
     background-color: #f4f4f4; 
 } 
-.content-main section:nth-of-type(odd) h2 { 
+/*.content-main section:nth-of-type(odd) h2 { 
     color: rgb(0, 25, 28); 
-} 
+} */
+ .content-main section:nth-of-type(odd) h2 { 
+    color: rgb(0, 25, 28); 
+    /*background-color: #f4f4f4; */
+}
 .content-main section:nth-of-type(odd) .information p { 
     color: #333; 
 } 
@@ -194,9 +198,14 @@ body {
 .content-main section:nth-of-type(even) { 
     background-color: rgb(0, 25, 28); 
 } 
+/*.content-main section:nth-of-type(even) h2 { 
+    color: white; 
+} */
 .content-main section:nth-of-type(even) h2 { 
     color: white; 
-} 
+   /* background-color: rgb(0, 25, 28); */
+}
+
 .content-main section:nth-of-type(even) .information p { 
     color: white; 
 } 
@@ -228,13 +237,25 @@ body {
     line-height: 1.6; 
 } 
 
+/*.content-main section h2 { 
+    text-align: center; 
+    font-size: 2.5rem; 
+    font-family: 'Righteous', cursive; 
+    margin-bottom: 40px;
+ 
+} */
 .content-main section h2 { 
     text-align: center; 
     font-size: 2.5rem; 
     font-family: 'Righteous', cursive; 
-    margin-bottom: 40px; 
-} 
-
+    margin-bottom: 40px;
+    
+    /* Activamos el modo fijo */
+    position: sticky;
+    top: 80px;         /* Ajustado para que no se esconda detrás de la barra de navegación (80px) */
+    z-index: 10;       /* Asegura que el título pase por encima de las fotos/grids de la sección */
+    padding: 15px 0;   /* Espaciado interno para que el tapado de contenido sea suave */
+}
 /* Proyectos (Grid) */ 
 .grid-projects { 
     width: 85%; 
@@ -255,6 +276,19 @@ body {
     border-radius: 15px; 
     background-color: #555; 
 } 
+
+/* --- IMÁGENES DE FONDO PARA CADA PROYECTO --- */
+.grid-projects .project-1 {
+    background-image: url("assets/Clon-Google.jpeg"); /* Reemplaza con la ruta de tu imagen */
+}
+
+.grid-projects .project-2 {
+    background-image: url("assets/Sitio-Web.jpeg"); /* Reemplaza con la ruta de tu imagen */
+}
+
+.grid-projects .project-3 {
+    background-image: url("assets/proyecto3.jpg"); /* Reemplaza con la ruta de tu imagen */
+}
 
 .grid-projects .g-items .overlay { 
     position: absolute; 
