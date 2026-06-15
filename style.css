@@ -254,6 +254,24 @@ body {
     padding: 15px 0;   
 }
 
+  /* Contacto */
+.contact { 
+    width: 85%; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around; 
+    gap: 40px; 
+} 
+ 
+
+.contact p { 
+    width: 50%; 
+    font-size: 1.2rem; 
+    line-height: 1.6; 
+} 
+
 /* Proyectos (Grid) */ 
 .grid-projects { 
     width: 85%; 
