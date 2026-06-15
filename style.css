@@ -29,6 +29,10 @@ body {
     padding: 20px 0;
     display: flex;
     justify-content: center; 
+
+
+   mix-blend-mode: difference;
+    
 }
 
 .nav-inner {
@@ -358,6 +362,10 @@ body {
         padding: 15px 0;
         background-color: rgba(0, 63, 71, 0.95); 
         backdrop-filter: blur(5px);
+
+
+        mix-blend-mode: normal;
+        
     }
     .nav-inner {
         width: 90%;
