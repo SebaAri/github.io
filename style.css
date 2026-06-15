@@ -65,7 +65,7 @@ body {
     color: rgb(184, 184, 184); 
     font-size: 1rem; 
     transition: color 0.3s, font-weight 0.3s; 
-    word-wrap: break-word;
+    white-space: nowrap;
 } 
 
 .nav-list li a:hover { 
@@ -421,10 +421,7 @@ body {
     }
     .nav-list li a {
         font-size: 0.9rem;
-        display: flex;
-         flex-direction: column; /* Cambia a una columna vertical */
-         gap: 10px;
-    }
+          }
     .header_name h1 {
         font-size: 2rem;
     }
