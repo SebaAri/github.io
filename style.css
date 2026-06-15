@@ -421,7 +421,8 @@ body {
     }
     .nav-list li a {
         font-size: 0.9rem;
-        flex-wrap: wrap;
+         flex-direction: column; /* Cambia a una columna vertical */
+         gap: 10px;
     }
     .header_name h1 {
         font-size: 2rem;
