@@ -421,6 +421,7 @@ body {
     }
     .nav-list li a {
         font-size: 0.9rem;
+        display: flex;
          flex-direction: column; /* Cambia a una columna vertical */
          gap: 10px;
     }
