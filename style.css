@@ -424,6 +424,9 @@ body {
     .header_name h1 {
         font-size: 2rem;
     }
+    .content-main .information p{
+        line-height: 28px;
+        letter-spacing: 2px;
 }
 
 /* Preferencias del Sistema (Modo Oscuro) */ 
