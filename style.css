@@ -108,7 +108,11 @@ body {
 .header_name h4 { 
     color: rgb(224, 224, 224); 
     font-size: 2.5rem; 
-    font-weight: 100; 
+    font-weight: 100;
+
+    display: flex;
+    flex-direction: row;
+    
 } 
 
 .header_name h1 { 
