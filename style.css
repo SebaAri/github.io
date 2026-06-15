@@ -255,7 +255,7 @@ body {
 }
 
   /* Contacto */
-.contact { 
+.content-main .contact { 
     width: 85%; 
     max-width: 1000px; 
     margin: 0 auto; 
@@ -266,7 +266,7 @@ body {
 } 
  
 
-.contact p { 
+content-main .contact p { 
     width: 50%; 
     font-size: 1.2rem; 
     line-height: 1.6; 
