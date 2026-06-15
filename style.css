@@ -410,19 +410,21 @@ body {
 
 @media screen and (max-width: 400px) {
     .nav-list {
-        gap: 15px; 
+        flex-direction: column; /* Cambia de fila a columna */
+        gap: 12px;              /* Reduce el espacio entre palabras para que no ocupe tanto espacio */
+        text-align: center;     /* Centra el texto */
     }
     .nav-list li a {
-        font-size: 0.9rem;
+        font-size: 1.1rem;      /* Opcional: aumenta un poco el tamaño para que sea más fácil de tocar en móviles */
     }
     .header_name h1 {
         font-size: 2rem;
     }
-    .content-main .information p{
+    .content-main .information p {
         line-height: 28px;
         letter-spacing: 2px;
     }
-} 
+}
 
 /* Preferencias del Sistema (Modo Oscuro) */ 
 @media (prefers-color-scheme: dark) { 
