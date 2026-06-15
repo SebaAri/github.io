@@ -420,6 +420,8 @@ body {
     }
     .nav-list li a {
         font-size: 0.9rem;
+        writing-mode: vertical-lr; /* Apila el texto verticalmente de izquierda a derecha */
+        text-orientation: upright;
     }
     .header_name h1 {
         font-size: 2rem;
